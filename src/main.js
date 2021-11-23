@@ -37,21 +37,21 @@ output.gain.value = 0.5;
 
 //------------------volume control------------------
 const volumeControl = document.getElementById("volume");
-volumeControl.addEventListener('input', (event) => {
+volumeControl.addEventListener('input', () => {
     controlVolume()
 });
 
 //------------------filter controllers------------------
 const lowBandController = document.getElementById("lowband");
-lowBandController.addEventListener('input', (event) => {
+lowBandController.addEventListener('input', () => {
     controlLowBand()
 });
 const midBandController = document.getElementById("midband");
-midBandController.addEventListener('input', (event) => {
+midBandController.addEventListener('input', () => {
     controlMidBand()
 });
 const highBandController = document.getElementById("highband");
-highBandController.addEventListener('input', (event) => {
+highBandController.addEventListener('input', () => {
     controlHighBand()
 });
 
