@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AVT Übungsaufgabe 02</title>
+    <script type="module" src="./src/main.js"></script>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a062562745.js" crossorigin="anonymous"></script>
+    <link rel=stylesheet href="style.css" media=all>
+</head>
+<body>
+<div>
+    <h1 class="font-bold header-text">Audio Player</h1>
+    <audio id="myAudio" ontimeupdate="update()">
+        <source id="audioSource" src="public/Land_of_8_Bits.wav" type="audio/wav">
+    </audio>
+    <div class="player-ctn">
+        <canvas id="canvas" class="canvas-container" style="border:1px solid #d5b144;"></canvas>
+        <div class="infos-ctn">
+            <div class="title"> Land of 8 Bits </div>
+        </div>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+        <div class="btn-ctn">
+            <div class="btn-action">
+                <div id="btn-faws-play-pause">
+                    <i class='fas fa-play' id="icon-play"></i>
+                    <i class='fas fa-pause' id="icon-pause"></i>
+                </div>
+            </div>
+            <div class="btn-mute" id="toggleMute">
+                <div id="btn-volume">
+                    <i id="icon-vol-up" class='fas fa-volume-up'></i>
+                    <i id="icon-vol-mute" class='fas fa-volume-mute'></i>
+                </div>
+            </div>
+        </div>
+        <label class="font-bold block my-2 right" for="volume">
+            Volume
+            <input class="block" id="volume" type="range" min="0" max="100" value="50" step="0.01"/>
+        </label>
+        <div/>
+        <label class="font-bold block my-2" for="lowband">
+            Low band
+        </label>
+        <div/>
+        <input class="block" id="lowband" type="range" min="0" max="100" value="50" step="0.01"/>
+        <div/>
+        <label class="font-bold block my-2" for="midband">
+            Mid band
+        </label>
+        <div/>
+        <input class="block" id="midband" type="range" min="0" max="100" value="50" step="0.01"/>
+        <div/>
+        <label class="font-bold block my-2 label-text" for="highband">
+            High band
+        </label>
+        <div/>
+        <input class="block" id="highband" type="range" min="0" max="100" value="50" step="0.1"/>
+        <!--    <canvas class="rounded shadow bg-[#F5F5F5]" id="canvas" width="800" height="300"></canvas>-->
+    </div>
+</div>
+</body>
+</html>
