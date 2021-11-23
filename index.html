@@ -11,13 +11,13 @@
 <body>
 <div>
     <h1 class="font-bold header-text">Audio Player</h1>
-    <audio id="myAudio" ontimeupdate="update()">
+    <audio id="myAudio">
         <source id="audioSource" src="public/Land_of_8_Bits.wav" type="audio/wav">
     </audio>
     <div class="player-ctn">
         <canvas id="canvas" class="canvas-container" style="border:1px solid #d5b144;"></canvas>
         <div class="infos-ctn">
-            <div class="title"> Land of 8 Bits </div>
+            <div class="title"> Land of 8 Bits</div>
         </div>
         <div id="myProgress">
             <div id="myBar"></div>
@@ -36,29 +36,34 @@
                 </div>
             </div>
         </div>
-        <label class="font-bold block my-2 right" for="volume">
-            Volume
-            <input class="block" id="volume" type="range" min="0" max="100" value="50" step="0.01"/>
-        </label>
-        <div/>
-        <label class="font-bold block my-2" for="lowband">
-            Low band
-        </label>
-        <div/>
-        <input class="block" id="lowband" type="range" min="0" max="100" value="50" step="0.01"/>
-        <div/>
-        <label class="font-bold block my-2" for="midband">
-            Mid band
-        </label>
-        <div/>
-        <input class="block" id="midband" type="range" min="0" max="100" value="50" step="0.01"/>
-        <div/>
-        <label class="font-bold block my-2 label-text" for="highband">
-            High band
-        </label>
-        <div/>
-        <input class="block" id="highband" type="range" min="0" max="100" value="50" step="0.1"/>
-        <!--    <canvas class="rounded shadow bg-[#F5F5F5]" id="canvas" width="800" height="300"></canvas>-->
+        <div class="row">
+            <div class="column">
+                <label class="font-bold block my-2" for="lowband">
+                    Low band
+                </label>
+                <br>
+                <input class="block" id="lowband" type="range" min="0" max="100" value="50" step="0.01"/>
+                <br>
+                <label class="font-bold block my-2" for="midband">
+                    Mid band
+                </label>
+                <br>
+                <input class="block" id="midband" type="range" min="0" max="100" value="50" step="0.01"/>
+                <br>
+                <label class="font-bold block my-2 label-text" for="highband">
+                    High band
+                </label>
+                <br>
+                <input class="block" id="highband" type="range" min="0" max="100" value="50" step="0.1"/>
+            </div>
+            <div class="column">
+                <label class="font-bold block my-2" for="volume">
+                    Volume
+                </label>
+                <br>
+                <input class="block" id="volume" type="range" min="0" max="100" value="50" step="0.01"/>
+            </div>
+        </div>
     </div>
 </div>
 </body>

@@ -5,7 +5,9 @@ const higherBandThreshold = 7000;
 //------------------audio------------------
 const audio = document.querySelector('audio');
 audio.load();
-
+audio.ontimeupdate = function () {
+    update()
+};
 //------------------buttons------------------
 const playBtn = document.getElementById("icon-play");
 playBtn.addEventListener("click", playAudio);
@@ -106,6 +108,8 @@ let x = 0;
 
 output.connect(analyser).connect(volumeGain).connect(audioContext.destination);
 setBarProgress()
+
+
 /**
  * starts audio and visualisation
  */
@@ -173,9 +177,10 @@ function controlHighBand() {
 }
 
 /**
- * updates the control panel including play pause buttons
+ * updates the control panel including play&pause buttons and progress bar
  */
 function update() {
+    console.log("I am in update")
     setBarProgress();
     if (audio.ended) {
         document.querySelector('#icon-play').style.display = 'block';
@@ -184,12 +189,11 @@ function update() {
 }
 
 /**
- * shows the progress of audio
- * (doesn't work as planned)
+ * contralls the progress of the audio
  */
 function setBarProgress() {
     const progress = (audio.currentTime / audio.duration);
-    barProgress.style.width = progress * 100+ "%";
+    barProgress.style.width = progress * 100 + "%";
 }
 
 /**
@@ -202,7 +206,9 @@ function seek(event) {
     barProgress.style.width = percent * 100 + "%";
 }
 
-
+/**
+ * draws bars of different color & height (depending on information that comes from dataArray) on canvas
+ */
 function draw() {
     drawVisual = requestAnimationFrame(draw);
     x = 0;
